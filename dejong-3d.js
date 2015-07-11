@@ -1,9 +1,9 @@
 (function() {
   var A_MAX, A_MIN, A_MORPH, B_MAX, B_MIN, B_MORPH, C_MAX, C_MIN, C_MORPH, D_MAX, D_MIN, D_MORPH, E_MAX, E_MIN, E_MORPH, F_MAX, F_MIN, F_MORPH, NUM_VERTS, REDRAWS_PER_TICK, a, b, c, canvas, d, e, f, genProgram, genShader, gl, mat, program, render, vertBuffer, verts;
 
-  NUM_VERTS = 750000;
+  NUM_VERTS = 50000;
 
-  REDRAWS_PER_TICK = 25000;
+  REDRAWS_PER_TICK = 500;
 
   A_MORPH = 0.001;
 
