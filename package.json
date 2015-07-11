@@ -1,0 +1,12 @@
+{
+  "name": "strange-attractors",
+  "version": "0.0.1",
+  "author": "Christopher Grabowski",
+  "license": "MIT",
+  "repository": "https://github.com/cgrabowski/strange-attractors",
+  "main": "./dejong-3d.html",
+  "dependencies": {
+    "xform-js": "0.1.0",
+    "wgls": "file:../webgl-studio"
+  }
+}

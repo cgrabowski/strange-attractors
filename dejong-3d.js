@@ -3,23 +3,23 @@
 
   NUM_VERTS = 750000;
 
-  REDRAWS_PER_TICK = 50000;
+  REDRAWS_PER_TICK = 25000;
 
   A_MORPH = 0.001;
 
   B_MORPH = 0.001;
 
-  C_MORPH = 0.001;
+  C_MORPH = 0.003;
 
-  D_MORPH = 0.001;
+  D_MORPH = 0.003;
 
-  E_MORPH = 0.001;
+  E_MORPH = 0;
 
-  F_MORPH = 0.001;
+  F_MORPH = 0;
 
-  A_MAX = 2.0;
+  A_MAX = 1.55;
 
-  B_MAX = 1.4;
+  B_MAX = 1.55;
 
   C_MAX = 1.4;
 
@@ -27,19 +27,19 @@
 
   E_MAX = 1.4;
 
-  F_MAX = 1.4;
+  F_MAX = 1.1;
 
-  A_MIN = 1.5;
+  A_MIN = 1.3;
 
-  B_MIN = 1.1;
+  B_MIN = 1.3;
 
-  C_MIN = 1.1;
+  C_MIN = 1.35;
 
-  D_MIN = 1.1;
+  D_MIN = 1.35;
 
-  E_MIN = 1.1;
+  E_MIN = 1.0;
 
-  F_MIN = 1.1;
+  F_MIN = 1.0;
 
   a = A_MIN;
 
@@ -153,8 +153,8 @@
       }
       gl.bindBuffer(gl.ARRAY_BUFFER, vertBuffer);
       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.DYNAMIC_DRAW);
-      rotVec = new Vector([time % (2 * PI), time % (2 * PI), time % (2 * PI)]);
-      mat.identity().asRotation(rotVec.normalize(), 0.1).scale([1 / 2, 1 / 2, 1]);
+      rotVec = new Vector([1, 5, 3]).normalize();
+      mat.identity().asRotation(rotVec.normalize(), time / 10000 % (2 * PI)).scale([1 / 2, 1 / 2, 1 / 2]).translate([1, 0, 0]);
       u_matLoc = gl.getUniformLocation(program, 'u_matrix');
       gl.uniformMatrix4fv(u_matLoc, false, new Float32Array(mat.transpose()));
       gl.uniform1f(gl.getUniformLocation(program, 'u_elapsed'), time);
